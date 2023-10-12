@@ -1,6 +1,7 @@
 {
   "type": "module",
   "dependencies": {
+    "csv-reader": "^1.0.12",
     "dotenv": "^16.3.1",
     "emailjs": "^4.0.3",
     "nodemailer": "^6.9.5"
