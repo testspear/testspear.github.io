@@ -3,6 +3,7 @@
 import { AUTH_METHODS, SMTPClient } from "emailjs";
 import { createTransport } from "nodemailer";
 import { config } from "dotenv";
+import {createReadStream } from "fs";
 
 config();
 
@@ -16,12 +17,14 @@ let trans = createTransport({
 	}
 });
 
+var htmlstream = createReadStream("ugvmail.html");
+
 trans.sendMail(
 	{
 		from: '"NTI Ugv" nti@ugv.edu.br',
 		to: 'ens-kathleensouza@ugv.edu.br',
-		subject: 'spoof test',
-		text: 'I hope this works',
+		subject: 'Alteração de Senha',
+		html: htmlstream
 	},
 	(err, message) => {
 		console.log(err || message);
