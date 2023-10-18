@@ -43,7 +43,7 @@ var mails = createReadStream("sample.csv", {encoding: "utf-8"})
 			var html = readFileSync("ugvmail.html").toString("utf-8");
 			// substituir nome da pessoa
 			html = html.replace('{PESSOA}', row[0]);
-			html = html.replace('{UUID}', row[2]);
+			// html = html.replace('{UUID}', row[2]);
 	
 			// enviar email para pessoas
 			trans.sendMail(
